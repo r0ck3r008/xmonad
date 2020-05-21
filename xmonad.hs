@@ -10,9 +10,6 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Dzen
---Prompts
-import XMonad.Prompt
-import XMonad.Prompt.Shell
 
 
 myStartupHook=do
