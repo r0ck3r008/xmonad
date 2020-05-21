@@ -43,10 +43,10 @@ main=do
 		((mod1Mask, xK_d), spawn "trayer --edge bottom --align right --width 5 --height 12 --SetDockType true --SetPartialStrut true --expand true --transparent true --tint 0x000000 &"),
 		((mod1Mask .|. shiftMask, xK_d), spawn "killall trayer"),
 		((mod1Mask, xK_i), spawn "conky -d -c /home/naman/.conky/Gotham/Gotham"),
-		--((shiftMask, xK_F6), spawn "light -A 10"),
-		--((0, xK_XF86MonBrightnessDown), spawn "light -U 10")
 		((mod1Mask .|. shiftMask, xK_i), spawn "killall conky"),
 		((mod1Mask .|. shiftMask, xK_Up), spawn "~/.xmonad/.scripts/vol.sh inc"),
 		((mod1Mask .|. shiftMask, xK_Down), spawn "~/.xmonad/.scripts/vol.sh dec"),
 		((mod1Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
+		((mod1Mask, xK_b), spawn "~/.xmonad/.scripts/brit.sh inc"),
+		((mod1Mask .|. shiftMask, xK_b), spawn "~/.xmonad/.scripts/brit.sh dec")
         ]
