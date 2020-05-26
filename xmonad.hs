@@ -1,15 +1,14 @@
 --System
-import XMonad
 import System.IO
+import XMonad
 --Hooks
-import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.DynamicLog
 --Uitls
-import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Util.Dzen
 
 
 myStartupHook=do
@@ -25,16 +24,21 @@ myManageHook = composeAll
 	]
 
 main=do
-    xmonad $ ewmh def {
-		manageHook = myManageHook <+> manageHook defaultConfig
-		, layoutHook = avoidStruts  $  layoutHook defaultConfig
-		, modMask=mod4Mask
-		, terminal="alacritty"
-		, startupHook=myStartupHook
-		, borderWidth=0
-	}
-        `additionalKeys`
-        [
+  xmproc <- spawnPipe "xmobar ~/.xmobarrc"
+  xmonad $ docks $ ewmh def {
+    manageHook = myManageHook <+> manageHook defaultConfig,
+    layoutHook = avoidStruts  $  layoutHook defaultConfig,
+    logHook = dynamicLogWithPP xmobarPP {
+        ppOutput = hPutStrLn xmproc,
+        ppTitle = xmobarColor "green" "" . shorten 50
+        },
+    modMask=mod4Mask,
+    terminal="alacritty",
+    startupHook=myStartupHook,
+    borderWidth=0
+}
+	`additionalKeys`
+	[
 		((mod4Mask, xK_Return), spawn "alacritty"),
 		((mod4Mask, xK_d), spawn "rofi -show drun -lines 5 -eh 2 -width 50 -padding 800 -bw 0 -threads 0 -theme Arc-Dark -show-icons -icon-theme Arc"),
 		((mod4Mask, xK_w), spawn "rofi -show window -lines 5 -eh 2 -width 50 -padding 800 -bw 0 -threads 0 -theme Arc-Dark -show-icons -icon-theme Arc"),
