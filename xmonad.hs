@@ -9,6 +9,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+--Actions
+import XMonad.Actions.GridSelect
 
 
 myStartupHook=do
@@ -53,5 +55,6 @@ main=do
 		((mod4Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
 		((mod4Mask, xK_b), spawn "~/.xmonad/.scripts/brit.sh inc"),
 		((mod4Mask .|. shiftMask, xK_b), spawn "~/.xmonad/.scripts/brit.sh dec"),
-                ((mod4Mask, xK_m), sendMessage ToggleStruts)
+                ((mod4Mask, xK_m), sendMessage ToggleStruts),
+                ((mod1Mask, xK_w), goToSelected defaultGSConfig)
 	]
