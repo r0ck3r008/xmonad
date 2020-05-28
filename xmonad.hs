@@ -37,7 +37,9 @@ main=do
     modMask=mod4Mask,
     terminal="alacritty",
     startupHook=myStartupHook,
-    borderWidth=0
+    borderWidth=0,
+    focusFollowsMouse=False,
+    clickJustFocuses=False
 }
 	`additionalKeys`
 	[
