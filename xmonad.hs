@@ -17,6 +17,7 @@ myStartupHook=do
     spawnOnce "picom &"
     spawnOnce "nitrogen --restore &"
     spawnOnce "nm-applet &"
+    spawnOnce "trayer --edge top --align right --width 5 --height 18 --SetDockType true --SetPartialStrut true --expand true --tint 0x00000000 --alpha 0 &"
 
 
 myManageHook = composeAll
