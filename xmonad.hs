@@ -48,7 +48,6 @@ main=do
         ((mod4Mask, xK_d), spawn "rofi -show drun -lines 5 -eh 2 -width 50 -padding 800 -bw 0 -threads 0 -theme Arc-Dark -show-icons -icon-theme Arc"),
         ((mod1Mask, xK_l), spawn "slock"),
         ((mod1Mask .|. controlMask, xK_s), spawn "systemctl poweroff"),
-        ((mod1Mask .|. shiftMask, xK_d), spawn "killall trayer"),
         ((mod4Mask .|. shiftMask, xK_Up), spawn "~/.xmonad/.scripts/vol.sh inc"),
         ((mod4Mask .|. shiftMask, xK_Down), spawn "~/.xmonad/.scripts/vol.sh dec"),
         ((mod4Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
