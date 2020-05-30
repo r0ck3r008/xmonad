@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
 fi
 
 if [ "$1" = "inc" ]; then
-	light -A 10 && notify-send -i info "Brightness: "$(light -G)""
+	light -A 10 && notify-send "Brightness: "$(light -G)"" -t 250
 elif [ "$1" = "dec" ]; then
-	light -U 10 && notify-send -i info "Brightness: "$(light -G)""
+	light -U 10 && notify-send "Brightness: "$(light -G)"" -t 250
 fi
