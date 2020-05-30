@@ -9,7 +9,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%battery% | %multicpu% | %dynnetwork% } %date% {  "
+   , template = "%battery% | %multicpu% | %dynnetwork% } %date% | %KGNV% {  "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -36,9 +36,13 @@ Config {
    , commands = 
 
         -- weather monitor
-        [
+        [ Run Weather "KGNV" ["-t","<station> | <skyCondition> | <tempC>C",
+                              "-L","18","-H","25",
+                              "--normal","green",
+                              "--high","red",
+                              "--low","lightblue"] 360
         -- network activity monitor (dynamic interface resolution)
-        Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+        , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
                              , "--low"      , "darkgreen"
