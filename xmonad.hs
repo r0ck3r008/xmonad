@@ -49,8 +49,6 @@ main=do
         ((mod1Mask, xK_l), spawn "slock"),
         ((mod1Mask .|. controlMask, xK_s), spawn "systemctl poweroff"),
         ((mod1Mask .|. shiftMask, xK_d), spawn "killall trayer"),
-        ((mod1Mask, xK_i), spawn "conky -d -c /home/naman/.conky/Gotham/Gotham"),
-        ((mod1Mask .|. shiftMask, xK_i), spawn "killall conky"),
         ((mod4Mask .|. shiftMask, xK_Up), spawn "~/.xmonad/.scripts/vol.sh inc"),
         ((mod4Mask .|. shiftMask, xK_Down), spawn "~/.xmonad/.scripts/vol.sh dec"),
         ((mod4Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
