@@ -51,7 +51,7 @@ main=do
         ((mod1Mask .|. controlMask, xK_r), spawn "systemctl reboot"),
         ((mod4Mask .|. shiftMask, xK_Up), spawn "~/.xmonad/.scripts/vol.sh inc"),
         ((mod4Mask .|. shiftMask, xK_Down), spawn "~/.xmonad/.scripts/vol.sh dec"),
-        ((mod4Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
+        ((mod1Mask, xK_m), spawn "~/.xmonad/.scripts/vol.sh mute"),
         ((mod4Mask, xK_b), spawn "~/.xmonad/.scripts/brit.sh inc"),
         ((mod4Mask .|. shiftMask, xK_b), spawn "~/.xmonad/.scripts/brit.sh dec"),
         ((mod4Mask, xK_m), sendMessage ToggleStruts),
