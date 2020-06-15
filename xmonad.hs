@@ -46,7 +46,7 @@ main=do
     [
         ((mod4Mask, xK_Return), spawn "alacritty"),
         ((mod4Mask, xK_d), spawn "rofi -show drun -lines 5 -eh 2 -width 50 -padding 800 -bw 0 -threads 0 -theme Arc-Dark -show-icons -icon-theme Arc"),
-        ((mod1Mask, xK_l), spawn "slock"),
+        ((mod1Mask, xK_l), spawn "i3lock -i ~/.xmonad/lock.png -c ffffff"),
         ((mod1Mask .|. controlMask, xK_s), spawn "systemctl poweroff"),
         ((mod1Mask .|. controlMask, xK_r), spawn "systemctl reboot"),
         ((mod4Mask .|. shiftMask, xK_Up), spawn "~/.xmonad/.scripts/vol.sh inc"),
