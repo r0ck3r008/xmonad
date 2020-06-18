@@ -14,6 +14,6 @@ elif [ "$1" = "mute" ]; then
 	if [ "$muted" = "true" ]; then
 		notify-send -i info "Muted" -t 250
 	else
-		notify-send -i info "Unmuted!" -t 250
+		notify-send -i info "Unmuted" -t 250
 	fi
 fi
