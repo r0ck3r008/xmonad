@@ -5,12 +5,12 @@ if [ -z "$1" ]; then
 fi
 
 if [ "$1" = "inc" ]; then
-	pamixer -i 5 && notify-send "Volume: $(pamixer --get-volume)" -t 250
+	~/.xmonad/.scripts/pamixer/pamixer -i 5 && notify-send "Volume: $(~/.xmonad/.scripts/pamixer/pamixer --get-volume)" -t 250
 elif [ "$1" = "dec" ]; then
-	pamixer -d 5 && notify-send "Volume: $(pamixer --get-volume)" -t 250
+	~/.xmonad/.scripts/pamixer/pamixer -d 5 && notify-send "Volume: $(~/.xmonad/.scripts/pamixer/pamixer --get-volume)" -t 250
 elif [ "$1" = "mute" ]; then
-	pamixer -t
-	muted=$(pamixer --get-mute)
+	~/.xmonad/.scripts/pamixer/pamixer -t
+	muted=$(pamixer/pamixer --get-mute)
 	if [ "$muted" = "true" ]; then
 		notify-send -i info "Muted" -t 250
 	else
