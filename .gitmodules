@@ -1,0 +1,3 @@
+[submodule ".scripts/pamixer"]
+	path = .scripts/pamixer
+	url = https://github.com/cdemoulins/pamixer
