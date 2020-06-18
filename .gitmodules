@@ -1,3 +1,6 @@
 [submodule ".scripts/pamixer"]
 	path = .scripts/pamixer
 	url = https://github.com/cdemoulins/pamixer
+[submodule "trayer-srg"]
+	path = trayer-srg
+	url = https://github.com/sargon/trayer-srg
